@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Empleados from '../modules/empleados/Example';
+import Empleados from '../modules/Example';
 
 function Pages() {
   return (
