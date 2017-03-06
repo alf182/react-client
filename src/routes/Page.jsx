@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Empleados from '../modules/empleados/container/Empleados';
-import Detail from '../modules/empleados/container/EmpleadoDetail';
+import Empleados from '../modules/empleados/Example';
 
 function Pages() {
   return (
@@ -10,12 +9,7 @@ function Pages() {
         <Route
           path="/"
           exact
-          component={Empleados}
-        />
-        <Route
-          path="/employee/:id"
-          exact
-          component={Detail}
+          component={Example}
         />
       </Switch>
     </main>
