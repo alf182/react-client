@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Empleados from '../modules/Example';
+import Example from '../modules/Example';
+import NotFound from '../components/Utils/NotFound';
 
 function Pages() {
   return (
@@ -11,6 +12,7 @@ function Pages() {
           exact
           component={Example}
         />
+        <Route component={NotFound}/>
       </Switch>
     </main>
   );

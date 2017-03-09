@@ -3,6 +3,7 @@
  */
 const m = {
   numbers: 'Por favor introduzca números válidos',
+  floats: 'Por favor introduzca decimales válidos',
   email: 'Por favor introduzca una dirección de correo válida',
   idCard: 'Por favor introduzac un IdCard válido',
   required: 'Este campo es requerido',

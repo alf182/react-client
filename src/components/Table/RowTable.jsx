@@ -18,7 +18,6 @@ class Row extends React.Component {
   linked(){
     let principal_key = this.props.data_row[this.state.data_ref];
     if(this.state.data_path !== null && this.state.data_path !== undefined ){
-      console.log("redireccionar");
       this.props.push(`${this.state.data_path}/${principal_key}`);
     }
   }

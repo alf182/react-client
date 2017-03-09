@@ -31,14 +31,12 @@ function insertMessageAfterInput (messages){
       this.parentNode.insertBefore(messageNode, this.nextSibling);
     }
     else if(this.parentNode) {
-      // this.parentNode.classList.add("has-error");
-      // this.parentNode.appendChild(messageNode);
       if(this.parentNode.attributes[0].ownerElement.localName == 'div'){
         this.parentNode.classList.add("has-error");
         this.parentNode.appendChild(messageNode);
       }else{
         let newParent = this.parentNode;
-        forParents(newParent.parentNode, messageNode);
+        forParents(newParent.parentNode, messageNode,messages);
       }
     }
     else {
@@ -47,11 +45,16 @@ function insertMessageAfterInput (messages){
   }
 }
 
-function forParents(element, messageNode){
+function forParents(element, messageNode,messages){
   if(element.attributes[0].ownerElement.localName == 'div'){
     if(!element.classList.contains("has-error")){
       element.classList.add("has-error");
-      element.appendChild(messageNode);
+      if(element.attributes[0].ownerElement.children.length == 2){
+        element.appendChild(messageNode);
+      }else{
+        element.attributes[0].ownerElement.children[2].innerText = messages[0];
+      }
+
     }
   }
 }
@@ -69,6 +72,7 @@ function deleteMessageAfterInput (){
   } else {
     if(this.parentNode.nextSibling && this.parentNode.nextSibling.className === 'help-block'){
       this.parentNode.nextSibling.innerText = '';
+      //this.parentNode.parentNode.classList.remove("has-error");
       this.parentNode.parentNode.classList.remove("has-error");
     }
   }
